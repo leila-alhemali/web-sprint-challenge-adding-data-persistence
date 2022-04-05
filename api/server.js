@@ -12,7 +12,7 @@ server.use('/api/resources', resourcesRouter)
 
 server.use('/api/projects', projectsRouter)
 
-server.use('/api/task', taskRouter)
+server.use('/api/tasks', taskRouter)
 
 server.use( '*', (req, res) => {
     res.json({api: 'up'})

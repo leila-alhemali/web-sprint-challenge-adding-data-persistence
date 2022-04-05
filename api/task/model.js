@@ -2,16 +2,16 @@
 const db = require('../../data/dbConfig')
 
 async function getTasks() {
-    const tasks = await db('task')
+    const tasks = await db('tasks')
     return tasks
 }
 
 const getById = task_id => {
-    return db('task').where('task_id', task_id).first() 
+    return db('tasks').where('task_id', task_id).first() 
   }
 
 async function createTask(task) {
-    const [id] = await db('task').insert(task)
+    const [id] = await db('tasks').insert(task)
     return getById(id)
 }
 
